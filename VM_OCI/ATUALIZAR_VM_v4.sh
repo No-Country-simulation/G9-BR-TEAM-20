@@ -210,6 +210,11 @@ server {
         proxy_set_header Host \$host;
         proxy_set_header X-Real-IP \$remote_addr;
     }
+    location /simular {
+        proxy_pass http://localhost:8000/simular;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
     location /classificar {
         proxy_pass http://localhost:8000/classificar;
         proxy_set_header Host \$host;
@@ -257,6 +262,11 @@ server {
     }
     location /analise-financeira {
         proxy_pass http://localhost:8000/analise-financeira;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+    location /simular {
+        proxy_pass http://localhost:8000/simular;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
     }
